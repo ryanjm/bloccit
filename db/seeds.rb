@@ -25,8 +25,8 @@ rand(4..10).times do
 end
 
 u = User.first
-u.update_attributes(email: 'youremail.com', password: 'helloworld', password_confirmation: 'helloworld')
-u.confirm!
+u.skip_reconfirmation!
+u.update_attributes(email: 'ryan@ryanjm.com', password: 'helloworld', password_confirmation: 'helloworld')
 
 puts "Seed finished"
 puts "#{User.count} users created"
